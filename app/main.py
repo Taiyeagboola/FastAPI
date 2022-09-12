@@ -85,6 +85,9 @@ def create_posts(post: Post):
 
 @app.get("/posts/{id}")
 def get_post(id: int):
+    cursor.execute("""SELECT * FROM posts WHERE id = 1""")
+    test_post = cursor.fetchone()
+    print(test_post)
     # print(type(id))
     post = find_post(id)
     # return{"post_detail": f"here is post {id}"}
